@@ -8,5 +8,5 @@ import retrofit2.http.Url
 
 interface APIService {
     @GET
-    fun getDatos(@Url url:String): Response<DatosIntems>
+    fun getDatos(@Url url:String): Response<DatosPrueba>
 }
