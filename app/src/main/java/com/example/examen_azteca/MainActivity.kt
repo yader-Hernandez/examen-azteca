@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
     private  lateinit var binding: ActivityMainBinding
     private  lateinit var adapter: ImageAdapter
-    private  val imagenes = mutableListOf<String>()
+    private  val imagenesServ = mutableListOf<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,6 +48,9 @@ class MainActivity : AppCompatActivity() {
             runOnUiThread{
                 if (call.isSuccessful){
                     val imagenes: List<String> = datos?.items?.map { it.imagen } ?: emptyList()
+                    imagenesServ.clear()
+                    imagenesServ.addAll(imagenes)
+                    adapter.notifyDataSetChanged()
                 }
                 else{
                     showError()
