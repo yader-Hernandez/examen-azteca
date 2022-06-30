@@ -1,9 +1,9 @@
-package com.example.examen_azteca.models
+package com.example.examen_azteca.domain.models
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-data class datosPrueba(
+data class DatosPrueba(
     @SerializedName("items")
     @Expose
     var items: List<DatosIntems>
